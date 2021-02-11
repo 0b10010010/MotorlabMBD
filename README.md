@@ -1,6 +1,10 @@
 # MotorlabMBD
 
 ## SIL and PIL with Simulink
+### Hardware Support Packages needed:
+* Embedded Coder Support Package for STMicroelectronics Discovery Boards
+* Embedded Coder Support Package for ARM Cortex-M Processors
+* Embedded Coder Interface to QEMU Emulator
 
 Using QEMU with Simulation: Set the Hardware Implementation under Configuration Parameter to use QEMU as hardware. Set the Verification under Code Generation to create PIL block within Advanced parameters. Click apply and close. Set the PID controller to be discrete. Right click on the controller block -> C/C++ Code -> Deploy this Subsystem to Hardware. Click Build button on the new window. This should build the model and open a new Simulink window containing the PIL block. Setting is PIL but placing the created PIL block and runnning the simulation will bring up QEMU emulation window which emulates the board. Although it emulates ARM Cortex M3&copy;, there should not be a noticeable performance difference doing a simple PID loop.
 
