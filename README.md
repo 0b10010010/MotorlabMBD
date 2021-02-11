@@ -17,6 +17,7 @@ When editing the project within IDE, make sure to change the source code used in
 
 DO NOT COPY THE SIMULINK FILE AND BUILD WITH DIFFERENT IOC FILE.
 IT WILL GIVE YOU THE stm32_make_rtw_hook(): error with copyModelFiles() ERROR
+Also, name of .ioc file will be the name of the generated project.
 
 In STM32CubeMX, check generate under root to avoid project creation within a project.
 
