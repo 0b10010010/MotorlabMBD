@@ -13,6 +13,7 @@ Using PIL with STM32F4 Discovery: Similar to above QEMU but change the hardware 
 ### Position Control Simulation SIL and PIL VS HIL
 
 HIL PWM TIM3 block was configured to use ARR value of only 2 (which set the PWM freq. to 14MHz). Changing the ARR value to 140 correctly sets the output freq. to 200kHz.
+Also, the difference in position control of 3000 deg was induced from Simulink's PID block N coefficient which was set at 100. Disabling this coefficient produced the step response using PD control to very similar to the one from motorlabGUI.
 HIL plot shows an initial delay of about 0.05 seconds
 
 
