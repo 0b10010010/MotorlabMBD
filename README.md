@@ -10,6 +10,9 @@ Using QEMU with Simulation: Set the Hardware Implementation under Configuration 
 
 Using PIL with STM32F4 Discovery: Similar to above QEMU but change the hardware to STM32F4 Discovery. Deploy the subsystem to hardware which then builds the new block to be placed in the Simulink model. Run the simulation which will execute OpenOCD to communicate with the Discovery board. Make sure to use FTDI USB to Serial in order to avoid bottleneck in ST-LINK (It is extremely slow with ST-LINK even for 0.5 second simulation).
 
+### Position Control Simulation SIL and PIL VS HIL
+HIL plot shows an initial delay of about 0.05 seconds
+
 
 ## External Mode with STM32-MAT/Target
 
