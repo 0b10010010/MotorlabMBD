@@ -2,6 +2,7 @@
 
 # TODO:
 - [ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
+- [ ] check if position control of 200 deg works without the UART TX block
 
 
 ## SIL and PIL with Simulink
