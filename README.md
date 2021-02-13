@@ -1,7 +1,7 @@
 # MotorlabMBD
 
 # TODO:
--[] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
+-[ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
 
 
 ## SIL and PIL with Simulink
