@@ -2,6 +2,8 @@
 
 # TODO:
 - [ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
+- [ ] setup DMA transfer of buffer with data
+- [ ] setup ADC to output current sensing from the amp to the buffer on STM32F4
 - [x] check if position control of 200 deg works without the UART TX block </br>
   -Did not work. Motor turns to about 30 deg and just sits there  
 
