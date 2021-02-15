@@ -10,6 +10,7 @@
   -Did not work. Motor turns to about 30 deg and just sits there
 ## MATLAB:
 - [x] use data = uint8(fread(this.serialPort,totNumBytes)'); <- See GloTalkClass.m
+- [x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it
 - [ ] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
 
 ## MATLAB Data Handle
