@@ -1,14 +1,16 @@
 # MotorlabMBD
 
-# TODO:
+# TODO
+## STM32:
 - [x] set objects as global to add Watch Expressions during debug
 - [ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot
 - [ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
 - [ ] setup DMA transfer of buffer with data
 - [ ] setup ADC to output current sensing from the amp to the buffer on STM32F4
 - [x] check if position control of 200 deg works without the UART TX block </br>
-  -Did not work. Motor turns to about 30 deg and just sits there  
-
+  -Did not work. Motor turns to about 30 deg and just sits there
+## MATLAB:
+- [ ] use data = uint8(fread(this.serialPort,totNumBytes)'); <- See GloTalkClass.m
 
 ## SIL and PIL with Simulink
 ### Hardware Support Packages needed:
