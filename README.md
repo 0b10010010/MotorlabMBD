@@ -10,7 +10,8 @@
 - [x] check if position control of 200 deg works without the UART TX block </br>
   -Did not work. Motor turns to about 30 deg and just sits there
 ## MATLAB:
-- [ ] use data = uint8(fread(this.serialPort,totNumBytes)'); <- See GloTalkClass.m
+- [x] use data = uint8(fread(this.serialPort,totNumBytes)'); <- See GloTalkClass.m
+- [ ] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
 
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI runAutosaveButton_Callback function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
