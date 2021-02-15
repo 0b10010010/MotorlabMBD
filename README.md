@@ -12,6 +12,11 @@
 ## MATLAB:
 - [ ] use data = uint8(fread(this.serialPort,totNumBytes)'); <- See GloTalkClass.m
 
+## MATLAB Data Handle
+micro sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
+
+For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function getObject(handles.status,1) is used to get a single instance. This instance contains 9 floatvals of status of the motor.
+
 ## SIL and PIL with Simulink
 ### Hardware Support Packages needed:
 * Embedded Coder Support Package for STMicroelectronics Discovery Boards
