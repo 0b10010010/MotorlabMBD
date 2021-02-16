@@ -13,6 +13,7 @@
 - [x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it
 - [x] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug </br>
   -Did not work. PIL config window bug persists
+- [x] change inc and src directories in block source m files
 ## Simulink
 - [ ] implement 2nd order LPF
 - [ ] switch in the dashboard to alternate between position and speed control
