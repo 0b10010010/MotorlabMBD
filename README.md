@@ -11,7 +11,8 @@
 ## MATLAB:
 - [x] use data = uint8(fread(this.serialPort,totNumBytes)'); <- See GloTalkClass.m
 - [x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it
-- [ ] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
+- [x] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug </br>
+  -Did not work. PIL config window bug persists
 ## Simulink
 - [ ] implement 2nd order LPF
 - [ ] switch in the dashboard to alternate between position and speed control
