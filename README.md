@@ -15,6 +15,9 @@
 ## Simulink
 - [ ] implement 2nd order LPF
 - [ ] switch in the dashboard to alternate between position and speed control
+- [x] amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot
+- [ ] displays to show pos and vel data
+- [ ] edit encoder block to be able to set it back to zero
 - [ ] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.
 
 ## MATLAB Data Handle
