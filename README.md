@@ -15,6 +15,7 @@
   -Did not work. PIL config window bug persists
 - [x] change \inc and \src directories in block source m files
 ## Simulink
+- [ ] give the encoder signal priority in order to get the data from zero
 - [ ] implement 2nd order LPF
 - [ ] switch in the dashboard to alternate between position and speed control
 - [x] amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot
