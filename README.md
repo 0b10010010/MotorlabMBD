@@ -13,7 +13,7 @@
 - [x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it
 - [ ] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
 ## Simulink
-- [ ] create a derivative filter to get velocity from position
+- [ ] implement 2nd order LPF
 - [ ] switch in the dashboard to alternate between position and speed control
 - [ ] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.
 
