@@ -16,6 +16,7 @@
   -Did not work. PIL config window bug persists
 - [ ] change \inc and \src directories in block source m files
 ## Simulink
+- [ ] Convert to multi-tasking and multi-rate diagram
 - [ ] give the encoder signal priority in order to get the data from zero
 - [x] implement 2nd order LPF
 - [x] switch in the dashboard to alternate between position and speed control</br>
