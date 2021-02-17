@@ -16,12 +16,12 @@
 - [ ] change \inc and \src directories in block source m files
 ## Simulink
 - [ ] give the encoder signal priority in order to get the data from zero
-- [ ] implement 2nd order LPF
+- [x] implement 2nd order LPF
 - [x] switch in the dashboard to alternate between position and speed control</br>
   -Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required
 - [x] amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot
 - [ ] displays to show pos and vel data
-- [ ] edit encoder block to be able to set it back to zero
+- [x] edit encoder block to be able to set it back to zero
 - [ ] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.
 
 ## MATLAB Data Handle
