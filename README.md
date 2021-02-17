@@ -53,7 +53,7 @@
 </ul>
 
 ## MATLAB Data Handle
-When the Run Wave Autosave button is used to collect the whole data, motorlabGUI runAutosaveButton_Callback function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
+When the Run Wave Autosave button is used to collect the whole data, motorlabGUI `runAutosaveButton_Callback` function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function `receiveAllObjects` in `GloTalkClass.m`. `totNumBytes` is `(numBytes+9)*numInstance` where `numBytes` is the `sizeof(logDataDataType)`, `+9` is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and `numInstance` is 2048 for the `logDataDataType`. 
 
 For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances which is 2049.
 
@@ -80,12 +80,12 @@ HIL plot shows an initial delay of about 0.05 seconds
 When editing the project within IDE, make sure to change the source code used in Simulink to generate code. Simulink code generation will overwrite any changes made!
 
 DO NOT COPY THE SIMULINK FILE AND BUILD WITH DIFFERENT IOC FILE.
-IT WILL GIVE YOU THE stm32_make_rtw_hook(): error with copyModelFiles() ERROR
-Also, name of .ioc file will be the name of the generated project.
+IT WILL GIVE YOU THE `stm32_make_rtw_hook(): error with copyModelFiles() ERROR`
+Also, name of `.ioc` file will be the name of the generated project.
 
 In STM32CubeMX, check generate under root to avoid project creation within a project.
 
-When STM32CubeIDE throws error stating cannot open linker script file, change the Linker Script to "Z:\path\to\linker\script\STM32F407VGTX_FLASH.ld" instead of "//mne-stokes/path/to/script/.ld". 
+When STM32CubeIDE throws error stating cannot open linker script file, change the Linker Script to `Z:\path\to\linker\script\STM32F407VGTX_FLASH.ld` instead of `//mne-stokes/path/to/script/.ld`.
 
 For testing PIL demos, use run button. Unlike external mode, demo works wth run button.
 
