@@ -3,6 +3,7 @@
 # TODO
 - [ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
 ## STM32:
+<div>
 <ul>
 <li>[x] set objects as global to add Watch Expressions during debug</li>
 <li>[ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</li>
@@ -45,6 +46,8 @@
 <li>[x] edit encoder block to be able to set it back to zero</li>
 <li>[x] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.</li>
 </ul>
+</div>
+
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI runAutosaveButton_Callback function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
 
