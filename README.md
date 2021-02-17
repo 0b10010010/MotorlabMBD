@@ -20,14 +20,14 @@ This readme is for my list of features to complete and to keep track of bugs, wo
   &#9989; create callback function to call when 2048 bytes of data is received from the &mu; and plot it</br>
   &#9989; create a new Simulink diagram for Simulink_Motorlab to remove PIL bug</br>
     &emsp; &#8627; Did not work. PIL config window bug persists</br>
-  &#10060; change <code>\inc</code> and <code>\src</code> directories in block source m files</br>
+  &#9989; change <code>\inc</code> and <code>\src</code> directories in block source m files</br>
   &#10060; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br>
 
   <h2>Simulink:</h2>
   
   &#10060; Convert to multi-tasking and multi-rate diagram</br>
   &#10060; give the encoder signal priority in order to get the data from zero</br>
-  &#9989; implement 2nd order LPF</br>
+  &#9989; implement 2nd order LPF for speed control</br>
   &#9989; switch in the dashboard to alternate between position and speed control</br>
     &emsp; &#8627; Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required</br>
   &#9989; amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot</br>
