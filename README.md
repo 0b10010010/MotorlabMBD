@@ -1,4 +1,5 @@
 # MotorlabMBD
+This readme is for my list of features to complete and to keep track of bugs, workarounds, and etc.
 
 # TODO
 
