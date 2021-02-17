@@ -26,7 +26,8 @@ This readme is for my list of features to complete and to keep track of bugs, wo
   <h2>Simulink:</h2>
   
   &#10060; Convert to multi-tasking and multi-rate diagram</br>
-  &#10060; give the encoder signal priority in order to get the data from zero</br>
+  &#9989; give the encoder signal priority in order to get the data from zero</br>
+    &emsp; &#8627; Now plot starts from zero (initial) value</br>
   &#9989; implement 2nd order LPF for speed control</br>
   &#9989; switch in the dashboard to alternate between position and speed control</br>
     &emsp; &#8627; Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required</br>
