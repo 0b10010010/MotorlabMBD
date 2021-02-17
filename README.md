@@ -2,10 +2,10 @@
 
 # TODO
 
-  &#10060; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
+  &#10060; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</br>
   
   <h2>STM32:</h2>
-
+  
   &#9989; set objects as global to add Watch Expressions during debug</br>
   &#10060; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</br>
   &#10060; set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</br>
@@ -14,16 +14,16 @@
     &emsp; &#8627; Did not work. Motor turns to about 30 deg and just sits there</br>
 
   <h2>MATLAB:</h2>
-
+  
   &#9989; use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See `GloTalkClass.m`</br>
   &#9989; create callback function to call when 2048 bytes of data is received from the &mu; and plot it</br>
   &#9989; create a new Simulink diagram for Simulink_Motorlab to remove PIL bug</br>
     &emsp; &#8627; Did not work. PIL config window bug persists
   &#10060; change <code>\inc</code> and <code>\src</code> directories in block source m files</br>
-  <blockquote>&#10060; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br></blockquote>
+  &#10060; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br>
 
   <h2>Simulink:</h2>
-
+  
   &#10060; Convert to multi-tasking and multi-rate diagram</br>
   &#10060; give the encoder signal priority in order to get the data from zero</br>
   &#9989; implement 2nd order LPF</br>
