@@ -3,20 +3,18 @@
 # TODO
 
 <ul>
-  <li>[ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</li>
+  &#9989; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
   
 <li><h2>STM32:</h2>
 
   &#9989; set objects as global to add Watch Expressions during debug
-  <li>[ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</li>
-  <li>[ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</li>
-  <li>[ ] setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</li>
-  <li>[x] check if position control of 200 deg works without the UART TX block
+  &#x25a2; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot
+  &#x25a2; set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
+  &#x25a2; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4
+  &#9989; check if position control of 200 deg works without the UART TX block
   <ul>
     <li>Did not work. Motor turns to about 30 deg and just sits there</li>
   </ul>
-  </li>
-
 </li>
 
 <li><h2>MATLAB:</h2>
