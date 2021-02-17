@@ -7,7 +7,7 @@
   
 <li><h2>STM32:</h2>
 <ul>
-  <li> &#9989; set objects as global to add Watch Expressions during debug</li>
+  &#9989; set objects as global to add Watch Expressions during debug
   <li>[ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</li>
   <li>[ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</li>
   <li>[ ] setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</li>
