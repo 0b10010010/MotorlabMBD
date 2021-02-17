@@ -11,14 +11,14 @@
   &#10060; set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</br>
   &#10060; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</br>
   &#9989; check if position control of 200 deg works without the UART TX block</br>
-    &#8627; Did not work. Motor turns to about 30 deg and just sits there</br>
+    &emsp; &#8627; Did not work. Motor turns to about 30 deg and just sits there</br>
 
   <h2>MATLAB:</h2>
 
   &#9989; use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See `GloTalkClass.m`</br>
   &#9989; create callback function to call when 2048 bytes of data is received from the &mu; and plot it</br>
   &#9989; create a new Simulink diagram for Simulink_Motorlab to remove PIL bug</br>
-  -Did not work. PIL config window bug persists
+    &emsp; &#8627; Did not work. PIL config window bug persists
   &#10060; change <code>\inc</code> and <code>\src</code> directories in block source m files</br>
   &#10060; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br>
 
@@ -28,10 +28,10 @@
   &#10060; give the encoder signal priority in order to get the data from zero</br>
   &#9989; implement 2nd order LPF</br>
   &#9989; switch in the dashboard to alternate between position and speed control</br>
-    &#8627; Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required</br>
+    &emsp; &#8627; Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required</br>
   &#9989; amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot</br>
   &#9989; displays to show pos and vel data</br>
-    &#8627; Did not work. Same reason as Simulink Real Time Desktop toolbox is not available</br>
+    &emsp; &#8627; Did not work. Same reason as Simulink Real Time Desktop toolbox is not available</br>
   &#9989; edit encoder block to be able to set it back to zero</br>
   &#9989; edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.</br>
 
