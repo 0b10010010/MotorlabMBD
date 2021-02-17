@@ -3,8 +3,8 @@
 # TODO
 
 <ul>
-<li>[ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</li>
-
+  <li>[ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</li>
+  
 <li><h2>STM32:</h2>
 <ul>
   <li>[x] set objects as global to add Watch Expressions during debug</li>
@@ -33,7 +33,7 @@
 </ul>
 </li>
 
-</li><h2>Simulink:</h2>
+<li><h2>Simulink:</h2>
 <ul>
   <li>[ ] Convert to multi-tasking and multi-rate diagram</li>
   <li>[ ] give the encoder signal priority in order to get the data from zero</li>
