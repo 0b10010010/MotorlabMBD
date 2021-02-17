@@ -6,7 +6,7 @@
   <li>[ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</li>
   
 <li><h2>STM32:</h2>
-<ul>
+
   &#9989; set objects as global to add Watch Expressions during debug
   <li>[ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</li>
   <li>[ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</li>
@@ -16,7 +16,7 @@
     <li>Did not work. Motor turns to about 30 deg and just sits there</li>
   </ul>
   </li>
-</ul>
+
 </li>
 
 <li><h2>MATLAB:</h2>
