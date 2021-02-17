@@ -20,9 +20,10 @@
 - [x] switch in the dashboard to alternate between position and speed control</br>
   -Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required
 - [x] amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot
-- [ ] displays to show pos and vel data
+- [x] displays to show pos and vel data</br>
+  -Did not work. Same reason as Simulink Real Time Desktop toolbox is not available
 - [x] edit encoder block to be able to set it back to zero
-- [ ] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.
+- [x] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.
 
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI runAutosaveButton_Callback function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
