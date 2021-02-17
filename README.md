@@ -21,7 +21,7 @@
 
 <h2>MATLAB:</h2>
 <ul>
-<li>[x] use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See GloTalkClass.m</li>
+<li>[x] use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See `GloTalkClass.m`</li>
 <li>[x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it</li>
 <li>[x] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
 <ul>
