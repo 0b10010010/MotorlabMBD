@@ -4,10 +4,9 @@
 
 <ul>
 <li>[ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</li>
-</ul>
 
 <h2>STM32:</h2>
-<ul>
+
 <li>[x] set objects as global to add Watch Expressions during debug</li>
 <li>[ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</li>
 <li>[ ] set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</li>
@@ -17,10 +16,9 @@
   <li>Did not work. Motor turns to about 30 deg and just sits there</li>
 </ul>
 </li>
-</ul>
 
 <h2>MATLAB:</h2>
-<ul>
+
 <li>[x] use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See `GloTalkClass.m`</li>
 <li>[x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it</li>
 <li>[x] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
@@ -30,10 +28,9 @@
 </li>
 <li>[ ] change <code>\inc</code> and <code>\src</code> directories in block source m files</li>
 <li>[ ] for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></li>
-</ul>
 
 <h2>Simulink:</h2>
-<ul>
+
 <li>[ ] Convert to multi-tasking and multi-rate diagram</li>
 <li>[ ] give the encoder signal priority in order to get the data from zero</li>
 <li>[x] implement 2nd order LPF</li>
