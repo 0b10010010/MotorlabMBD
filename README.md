@@ -2,56 +2,39 @@
 
 # TODO
 
-<ul>
-  &#9989; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
+  &#10060; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
   
-<li><h2>STM32:</h2>
+  <h2>STM32:</h2>
 
-  &#9989; set objects as global to add Watch Expressions during debug
-  &#x25a2; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot
-  &#x25a2; set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport
-  &#x25a2; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4
-  &#9989; check if position control of 200 deg works without the UART TX block
-  <ul>
-    <li>Did not work. Motor turns to about 30 deg and just sits there</li>
-  </ul>
-</li>
+  &#9989; set objects as global to add Watch Expressions during debug</br>
+  &#10060; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</br>
+  &#10060; set the baudrate to 460800 on STM32CubeMX and MATLAB function reading serialport</br>
+  &#10060; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</br>
+  &#9989; check if position control of 200 deg works without the UART TX block</br>
+    &#8627; Did not work. Motor turns to about 30 deg and just sits there</br>
 
-<li><h2>MATLAB:</h2>
-<ul>
-  <li>[x] use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See `GloTalkClass.m`</li>
-  <li>[x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it</li>
-  <li>[x] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
-  <ul>
-    <li>Did not work. PIL config window bug persists</li>
-  </ul>
-  </li>
-  <li>[ ] change <code>\inc</code> and <code>\src</code> directories in block source m files</li>
-  <li>[ ] for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></li>
-</ul>
-</li>
+  <h2>MATLAB:</h2>
 
-<li><h2>Simulink:</h2>
-<ul>
-  <li>[ ] Convert to multi-tasking and multi-rate diagram</li>
-  <li>[ ] give the encoder signal priority in order to get the data from zero</li>
-  <li>[x] implement 2nd order LPF</li>
-  <li>[x] switch in the dashboard to alternate between position and speed control
-  <ul>
-    <li>Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required</li>
-  </ul>
-  </li>
-  <li>[x] amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot</li>
-  <li>[x] displays to show pos and vel data
-  <ul>
-    <li>Did not work. Same reason as Simulink Real Time Desktop toolbox is not available</li>
-  </ul>
-  </li>
-  <li>[x] edit encoder block to be able to set it back to zero</li>
-  <li>[x] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.</li>
-  </ul>
-</ul>
-</li>
+  &#9989; use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See `GloTalkClass.m`</br>
+  &#9989; create callback function to call when 2048 bytes of data is received from the &mu; and plot it</br>
+  &#9989; create a new Simulink diagram for Simulink_Motorlab to remove PIL bug</br>
+  -Did not work. PIL config window bug persists
+  &#10060; change <code>\inc</code> and <code>\src</code> directories in block source m files</br>
+  &#10060; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br>
+
+  <h2>Simulink:</h2>
+
+  &#10060; Convert to multi-tasking and multi-rate diagram</br>
+  &#10060; give the encoder signal priority in order to get the data from zero</br>
+  &#9989; implement 2nd order LPF</br>
+  &#9989; switch in the dashboard to alternate between position and speed control</br>
+    &#8627; Dashboard blocks do not work with real time external mode. Simulink Real Time Desktop toolbox is required</br>
+  &#9989; amp switch is connected to TX block so that turning on the amp will start sending data back to host PC to plot</br>
+  &#9989; displays to show pos and vel data</br>
+    &#8627; Did not work. Same reason as Simulink Real Time Desktop toolbox is not available</br>
+  &#9989; edit encoder block to be able to set it back to zero</br>
+  &#9989; edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.</br>
+
 
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI `runAutosaveButton_Callback` function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function `receiveAllObjects` in `GloTalkClass.m`. `totNumBytes` is `(numBytes+9)*numInstance` where `numBytes` is the `sizeof(logDataDataType)`, `+9` is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and `numInstance` is 2048 for the `logDataDataType`. 
