@@ -16,15 +16,15 @@
 </ul>
 ## MATLAB:
 <ul>
-<li>[x] use `data = uint8(fread(this.serialPort,totNumBytes)');` <- See GloTalkClass.m</li>
+<li>[x] use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See GloTalkClass.m</li>
 <li>[x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it</li>
 <li>[x] create a new Simulink diagram for Simulink_Motorlab to remove PIL bug
 <ul>
   <li>Did not work. PIL config window bug persists</li>
 </ul>
 </li>
-<li>[ ] change \inc and \src directories in block source m files</li>
-<li>[ ] for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use `createSampleTime` and `setNumTicksUnitlNextHit`. See [here](https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html)</li>
+<li>[ ] change <code>\inc</code> and <code>\src</code> directories in block source m files</li>
+<li>[ ] for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></li>
 </ul>
 ## Simulink
 <ul>
@@ -48,7 +48,7 @@
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI runAutosaveButton_Callback function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
 
-For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function getObject(handles.status,1) is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances which is 2049.
+For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances which is 2049.
 
 ## SIL and PIL with Simulink
 ### Hardware Support Packages needed:
