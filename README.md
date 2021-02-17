@@ -1,6 +1,7 @@
 # MotorlabMBD
 
 # TODO
+- [ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
 ## STM32:
 - [x] set objects as global to add Watch Expressions during debug
 - [ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot
