@@ -36,6 +36,9 @@ This readme is for my list of features to complete and to keep track of bugs, wo
     &emsp; &#8627; Did not work. Same reason as Simulink Real Time Desktop toolbox is not available</br>
   &#9989; edit encoder block to be able to set it back to zero</br>
   &#9989; edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.</br>
+  
+## Simulink Data Collection Workflow
+First, make sure amp switch is off and set the block to zero. Then run the MATLAB script reading and ploting serial data. Back in the diagram, set the input to 200. Click on empty space in the diagram and turn on the amp switch. After the first run, set the input to zero. Motor should go back to zero. Turn off the amp. Reset the encoder, clear the device in the workspace reading in the serial data, and repeat the process. If not following the steps above, either data will not start from the zero (initial value), or control loop will not be optimal.
 
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI `runAutosaveButton_Callback` function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function `receiveAllObjects` in `GloTalkClass.m`. `totNumBytes` is `(numBytes+9)*numInstance` where `numBytes` is the `sizeof(logDataDataType)`, `+9` is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and `numInstance` is 2048 for the `logDataDataType`. 
