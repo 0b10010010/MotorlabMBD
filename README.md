@@ -2,8 +2,7 @@
 
 # TODO
 - [ ] Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++
-## STM32:
-
+<h2>STM32:</h2>
 <ul>
 <li>[x] set objects as global to add Watch Expressions during debug</li>
 <li>[ ] when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</li>
@@ -15,7 +14,7 @@
 </ul>
 </li>
 </ul>
-## MATLAB:
+<h2>MATLAB:</h2>
 <ul>
 <li>[x] use <code>data = uint8(fread(this.serialPort,totNumBytes)');</code> <- See GloTalkClass.m</li>
 <li>[x] create callback function to call when 2048 bytes of data is received from the &mu; and plot it</li>
@@ -27,7 +26,7 @@
 <li>[ ] change <code>\inc</code> and <code>\src</code> directories in block source m files</li>
 <li>[ ] for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></li>
 </ul>
-## Simulink
+<h2>Simulink:</h2>
 <ul>
 <li>[ ] Convert to multi-tasking and multi-rate diagram</li>
 <li>[ ] give the encoder signal priority in order to get the data from zero</li>
@@ -46,7 +45,6 @@
 <li>[x] edit encoder block to be able to set it back to zero</li>
 <li>[x] edit HIL Simulink model to send the data (all 2048 by n fields containing position, velocity, etc.) back to host PC when a button is pressed.</li>
 </ul>
-
 
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI runAutosaveButton_Callback function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function receiveAllObjects in GloTalkClass.m. totNumBytes is (numBytes+9)*numInstance where numBytes is the sizeof(logDataDataType), '+9' is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and numInstance is 2048 for the logDataDataType. 
