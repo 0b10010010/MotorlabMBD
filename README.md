@@ -47,6 +47,8 @@ When the Run Wave Autosave button is used to collect the whole data, motorlabGUI
 
 For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances which is 2049.
 
+`objID` is the following: `TrapProf` is 1, `LogData` is 2, `Parameters` is 3, and `Status` is 4. Only `LogData` has length of 2048 and the others are 1.
+
 ## SIL and PIL with Simulink
 ### Hardware Support Packages needed:
 * `Embedded Coder Support Package for STMicroelectronics Discovery Boards`
