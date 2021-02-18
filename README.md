@@ -64,7 +64,7 @@ objID number 255 is reserved for ack/nack (TODO)
 gloObjectPtrs[objID]; is a pointer the the meta data structure for the obj
 'objname'.dataPtr & gloObjectPtrs[objID]->dataPtr; pointers to the first instance of the obj
 ```
-
+`numInstance` is 2 bytes because the number 2048 is 12 bit.
 For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor which is similar to `handles.logData`. If the instance is 0 it is a request for all instances; for `getObject(handles.logData, 0)` it will receive all 2048 `floatvals[9]`.
 
 `objID` is the following: `TrapProf` is 1, `LogData` is 2, `Parameters` is 3, and `Status` is 4. Only `LogData` has length of 2048 and the others are 1.
