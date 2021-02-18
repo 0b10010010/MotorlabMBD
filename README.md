@@ -45,7 +45,7 @@ First, make sure amp switch is off and set the block to zero. Then run the MATLA
 ## MATLAB Data Handle
 When the Run Wave Autosave button is used to collect the whole data, motorlabGUI `runAutosaveButton_Callback` function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function `receiveAllObjects` in `GloTalkClass.m`. `totNumBytes` is `(numBytes+9)*numInstance` where `numBytes` is the `sizeof(logDataDataType)`, `+9` is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2), and `numInstance` is 2048 for the `logDataDataType`. 
 
-For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances which is 2049.
+For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.logData,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances which is 2049 i.e. `getObject(handles.logData,0)`
 
 `objID` is the following: `TrapProf` is 1, `LogData` is 2, `Parameters` is 3, and `Status` is 4. Only `LogData` has length of 2048 and the others are 1.
 
