@@ -43,9 +43,29 @@ This readme is for my list of features to complete and to keep track of bugs, wo
 First, make sure amp switch is off and set the block to zero. Then run the MATLAB script reading and ploting serial data. Back in the diagram, set the input to 200. Click on empty space in the diagram and turn on the amp switch. After the first run, set the input to zero. Motor should go back to zero. Turn off the amp. Reset the encoder, clear the device in the workspace reading in the serial data, and repeat the process. If not following the steps above, either data will not start from the zero (initial value), or control loop will not be optimal.
 
 ## MATLAB Data Handle
-When the Run Wave Autosave button is used to collect the whole data, motorlabGUI `runAutosaveButton_Callback` function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function `receiveAllObjects` in `GloTalkClass.m`. `totNumBytes` is `(numBytes+9)*numInstance` where `numBytes` is the `sizeof(logDataDataType)` which is a `float` array with length of 9. `numInstance` is 2048 for the `logDataDataType`. `+9` is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2). 
+When the Run Wave Autosave button is used to collect the whole data, motorlabGUI `runAutosaveButton_Callback` function sends the &mu;controller parameter object to start Autosave. Then the gui waits for the &mu;controller which sends a single instance at a time, total of 2048 times. Each instance contains all 9 floatval data. See function `receiveAllObjects` in `GloTalkClass.m`. Within the function `receiveAllObjects`, it will compare the available bytes in the buffer: `serialPort.BytesAvailable >= totNumBytes` to decide if it should read in the data or not. `totNumBytes` is `(numBytes+9)*numInstance` where `numBytes` is the `sizeof(logDataDataType)` which is a `float` array with length of 9. `numInstance` is 2048 for the `logDataDataType`. `+9` is the other bytes in the buffer: start (+3), objID (+1), instance (+2), numBytes (+1), endBytes (+2). In the `getObject`, which contains the `receiveAllObjects`, `objID` is 0 in `bytes` which is a request to &mu;controller to send back the data. See the following from the description:
+```
+gloObjects consist of
 
-For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor. If the instance is 0 it is a request for all instances; for `getObject(handles.logData, 0)` it will receive all 2049 .
+typedef struct{
+  uint8_t id;
+  uint8_t numBytes;
+  uint16_t numInstance;
+  uint8_t junk;
+  void *dataPtr;
+  void  (* onReceiveFuncPtr)(uint16_t instance);
+} gloMetaDataType;
+
+objID number 0 is not an object it is merely a request for an object to be sent.  It has a one byte body that is the objID.  The instance
+number (two bytes) is in the message header. If the instance number is zero, then it is a request for all instances.
+
+objID number 255 is reserved for ack/nack (TODO)
+
+gloObjectPtrs[objID]; is a pointer the the meta data structure for the obj
+'objname'.dataPtr & gloObjectPtrs[objID]->dataPtr; pointers to the first instance of the obj
+```
+
+For the status update in motorlabGUI.m to display the status of the motor, such as the position at an instance, the function `getObject(handles.status,1)` is used to get a single instance. This instance contains 9 floatvals of status of the motor which is similar to `handles.logData`. If the instance is 0 it is a request for all instances; for `getObject(handles.logData, 0)` it will receive all 2048 `floatvals[9]`.
 
 `objID` is the following: `TrapProf` is 1, `LogData` is 2, `Parameters` is 3, and `Status` is 4. Only `LogData` has length of 2048 and the others are 1.
 
