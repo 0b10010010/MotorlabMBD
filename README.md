@@ -7,6 +7,7 @@ This readme is for my list of features to complete and to keep track of bugs, wo
   
   <h2>STM32:</h2>
   
+  &#10060; setup software interrupt on USART2 RX to trigger
   &#9989; set objects as global to add Watch Expressions during debug</br>
   &#10060; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</br>
   &#9989; set the baudrate to 921600 on STM32CubeMX and MATLAB function reading serialport</br>
