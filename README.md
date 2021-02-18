@@ -10,6 +10,7 @@ This readme is for my list of features to complete and to keep track of bugs, wo
   &#9989; set objects as global to add Watch Expressions during debug</br>
   &#10060; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</br>
   &#10060; set the baudrate to 921600 on STM32CubeMX and MATLAB function reading serialport</br>
+    &emsp; &#8627; Along with 921600, oversample is set to 8 instead of 16 but still no difference</br>
   &#10060; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</br>
   &#9989; check if position control of 200 deg works without the UART TX block</br>
     &emsp; &#8627; Did not work. Motor turns to about 30 deg and just sits there</br>
