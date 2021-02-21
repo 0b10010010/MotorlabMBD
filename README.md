@@ -103,4 +103,14 @@ When STM32CubeIDE throws error stating cannot open linker script file, change th
 
 For testing PIL demos, use run button. Unlike external mode, demo works wth run button.
 
-For using the external mode with STM32-MAT Target, do not deploy the Simulink model. Instead, build the model, open the IDE, then run the debugger. And then connect to the Simulink model using the external mode control panel within Simulink. External mode is over UART5(PD2,PC12). 
+For using the external mode with STM32-MAT Target, do not deploy the Simulink model. Instead, build the model, open the IDE, then run the debugger. And then connect to the Simulink model using the external mode control panel within Simulink. External mode is over UART5(PD2,PC12).
+
+
+## Analysing the Position Control Data
+
+With the step size of 200 and Kp 0f 0.01 amp/deg, the motor amp is not saturating (3 amp saturation).
+
+![equation]("https://latex.codecogs.com/gif.latex?w_n%20%3D%20%5Csqrt%7B%5Cfrac%7BK_pK_tK_d_r%7D%7BJ%7D%7D")
+
+
+
