@@ -110,7 +110,7 @@ For using the external mode with STM32-MAT Target, do not deploy the Simulink mo
 
 With the step size of 200 and Kp 0f 0.01 amp/deg, the motor amp is not saturating (3 amp saturation).
 
-![equation]("https://latex.codecogs.com/gif.latex?w_n%20%3D%20%5Csqrt%7B%5Cfrac%7BK_pK_tK_d_r%7D%7BJ%7D%7D")
+![equation](https://latex.codecogs.com/gif.latex?w_n%20%3D%20%5Csqrt%7B%5Cfrac%7BK_pK_tK_d_r%7D%7BJ%7D%7D)
 
 
 
