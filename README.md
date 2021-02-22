@@ -118,3 +118,10 @@ Buadrate for each position value transmission is found with the following:
 each char array of ASCII numerical values are 64bit each -> 64bit/115200bits/sec = 0.0005556 seconds for each transmission which is not sufficient for 0.0001s steps.
 
 
+Meeting wiht Dr. White:
+
+Thesis -> Comaprison to current motrolab. RTOS on the current device. I am doing MBC and there will be a difference in effor there as far as comparison to RTOS.
+Problems with motorlab, if you want to do something different, equipemnt on motorlab (software) is designed to do only specific things. Instead of writing a new software, i could illustrate the merrits of MBD by demonstratng students could simply replace blocks to do different lab exercises that origianl motorlab was not able to do so.
+
+Outline of my thesis.
+Talk to Dr. Brockhoff -> see any ideas of my MBD application to his problems.
