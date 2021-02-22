@@ -113,5 +113,8 @@ With the step size of 200 and Kp 0f 0.01 amp/deg, the motor amp is not saturatin
 
 ![equation](https://latex.codecogs.com/svg.latex?w_n%20%3D%20%5Csqrt%7B%5Cfrac%7BK_pK_tK_d_r%7D%7BJ%7D%7D)
 
+Buadrate for each position value transmission is found with the following:
+
+each char array of ASCII numerical values are 64bit each -> 64bit/115200bits/sec = 0.0005556 seconds for each transmission which is not sufficient for 0.0001s steps.
 
 
