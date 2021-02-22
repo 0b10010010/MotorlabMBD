@@ -3,7 +3,7 @@ This readme is for my list of features to complete and to keep track of bugs, wo
 
 # TODO
 
-  &#10060; Implement circular buffer to compare the performance of position control using unsaturating Kp and step input.
+  &#10060; Implement circular buffer to compare the performance of position control using unsaturating Kp and step input.</br>
   &#10060; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</br>
   
   <h2>STM32:</h2>
