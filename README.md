@@ -1,6 +1,10 @@
 # MotorlabMBD
 This readme is for my list of features to complete and to keep track of bugs, workarounds, and etc.
 
+PIL simulation running at 1kHz matches better with 10kHz HIL response to 200 deg step input.
+
+Limitations of Simulink compiler: does not catch syntax errors so one have to wait untill the generated code is ported into the working IDE for debug.
+
 # TODO
 
   &#10060; Implement circular buffer to compare the performance of position control using unsaturating Kp and step input.</br>
