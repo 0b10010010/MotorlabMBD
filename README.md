@@ -7,6 +7,7 @@ Limitations of Simulink compiler: does not catch syntax errors so one have to wa
 
 # TODO
 
+  &#10060; Check the difference between single tasking mode vs multi tasking mode (overhead with multi tasking might be affecting the response)
   &#10060; Implement circular buffer to compare the performance of position control using unsaturating Kp and step input.</br>
   &#10060; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</br>
   
