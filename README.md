@@ -130,3 +130,8 @@ Problems with motorlab, if you want to do something different, equipemnt on moto
 
 Outline of my thesis.
 Talk to Dr. Brockhoff -> see any ideas of my MBD application to his problems.
+
+
+## Thesis Outline
+
+Objective of the thesis: to enable MBD approach to an existing Controls I laboratory appartus in order to demonstrate the capabilities
