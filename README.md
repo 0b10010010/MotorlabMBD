@@ -7,7 +7,9 @@ Limitations of Simulink compiler: does not catch syntax errors so one have to wa
 
 # TODO
 
-  &#10060; Check the difference between single tasking mode vs multi tasking mode (overhead with multi tasking might be affecting the response) -> unstable with Kp = 0.01 without multi tasking</br>
+
+  &#10060; What if the current control loop is not '1'? -> add a current control loop in my model?</br>
+  &#9989; Check the difference between single tasking mode vs multi tasking mode (overhead with multi tasking might be affecting the response) -> unstable with Kp = 0.01 without multi tasking</br>
   &#10060; Implement circular buffer to compare the performance of position control using unsaturating Kp and step input.</br>
   &#10060; Try generating code as C++ by replacing the source code to C++ and setting the code generation to C++</br>
   
