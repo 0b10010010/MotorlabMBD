@@ -17,6 +17,7 @@ Limitations of Simulink compiler: does not catch syntax errors so one have to wa
   
   <h2>STM32:</h2>
   
+  &#10060; TIM3 block for PWM generation does not set the other CCR to zero when dutycycle is set to input. (when CCR1 is set to dutycycle, CCR2 is not set)</br>
   &#10060; One must generate code using CubeMX first before building and generating code from Simulink</br>
   &#10060; when using external mode with receive interrupts in my function, there is a <code>multiple definition of 'HAL_UART_RxCpltCallback'</code> error</br>
   &#10060; setup software interrupt on USART2 RX to trigger</br>
