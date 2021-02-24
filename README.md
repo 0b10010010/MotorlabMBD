@@ -11,6 +11,8 @@ Follow ![this](https://electronics.stackexchange.com/questions/179546/getting-pw
 
 sysTick Timebase source is TIM2 -> in .ioc file under System Core tab-> SYS: set Debug to Serial Wire and Timebase source to TIM2
 
+set the IDE setting to printf float under settings
+
 # TODO
 
   &#10060; plant bandwidth?</br>
