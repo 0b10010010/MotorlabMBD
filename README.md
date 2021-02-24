@@ -3,7 +3,7 @@ This readme is for my list of features to complete and to keep track of bugs, wo
 
 PIL simulation running at 1kHz matches better with 10kHz HIL response to 200 deg step input.
 
-The board is setup to write to GPIO to check the loop frequency and it is exactly at 10kHz.
+The board is setup to write to GPIO to check the loop frequency and it is exactly at 10kHz. -> When sending USART, it rasises the time GPIO pin goes high to total of about 50 microseconds (loop is running at 100microseconds).
 
 Limitations of Simulink compiler: does not catch syntax errors so one have to wait untill the generated code is ported into the working IDE for debug.
 
