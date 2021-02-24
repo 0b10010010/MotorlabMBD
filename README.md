@@ -9,6 +9,8 @@ Limitations of Simulink compiler: does not catch syntax errors so one have to wa
 
 Follow ![this](https://electronics.stackexchange.com/questions/179546/getting-pwm-to-work-on-stm32f4-using-sts-hal-libraries) to setup PWM. Everything seems ok except I have to manually call `HAL_TIM_PWM_Start()` in my pwmInit function to start PWM output (see the `HIL_EXT.c` file where it calls `HIL_EXT_initialize()` to setup PWM output.
 
+sysTick Timebase source is TIM2 -> in .ioc file under System Core tab-> SYS: set Debug to Serial Wire and Timebase source to TIM2
+
 # TODO
 
   &#10060; plant bandwidth?</br>
