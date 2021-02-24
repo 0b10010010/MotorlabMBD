@@ -13,6 +13,8 @@ sysTick Timebase source is TIM2 -> in .ioc file under System Core tab-> SYS: set
 
 set the IDE setting to printf float under settings
 
+Using the same motorlab device, figure looks identical.
+
 # TODO
 
   &#10060; plant bandwidth?</br>
