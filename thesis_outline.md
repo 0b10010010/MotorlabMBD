@@ -1,7 +1,7 @@
 # Master's Thesis Outline
 
 ## Abstract
-  Problem statement of traditional coding practices for prototype development in contrast to the benefits of MBD approach. Include industrial practices especially in automotive and aerospace industries where hardware testing is much more difficult to do. Also what students can take away from doing MBD lab exercises. 
+  Problem statement of traditional coding practices for prototype development in contrast to the benefits of MBD approach. Include industrial practices especially in automotive and aerospace industries where hardware testing is much more difficult to do. Also what students can take away from doing MBD lab exercises. Less intricate coding practice.
 
 ## Table of Contents
   1. List of figures
