@@ -17,6 +17,8 @@ Using the same motorlab device, figure looks identical.
 
 Get rid of `matlab.system.mixin.CustomIcon` in MATLAB system blocks.
 
+When external mode is deployed, response is corrupted every time the board communicates with Simulink (speed control response has disturbance with certain period).
+
 # TODO
 
   &#10060; plant bandwidth?</br>
