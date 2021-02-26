@@ -26,6 +26,7 @@
     2.1. Minor setup within CubeIDE such as printf float setting and virtual environment path problems
   3. Basic Simulink model configuration for running the motorlab</br>
     3.1. MATLAB system blocks: sink and source
+    3.2. Peripheral setups using CubeMX
   5. Methods of MIL, SIL, PIL, and HIL and how to generate code for each</br>
     5.1. How to connect to Simulink using workaround for external mode generation (build fails when generate and connect)
 
