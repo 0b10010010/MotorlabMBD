@@ -15,6 +15,8 @@ set the IDE setting to printf float under settings
 
 Using the same motorlab device, figure looks identical.
 
+Get rid of `matlab.system.mixin.CustomIcon` in MATLAB system blocks.
+
 # TODO
 
   &#10060; plant bandwidth?</br>
