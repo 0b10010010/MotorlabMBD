@@ -18,7 +18,7 @@ Using the same motorlab device, figure looks identical.
 Get rid of `matlab.system.mixin.CustomIcon` in MATLAB system blocks.
 
 When external mode is deployed, response is corrupted every time the board communicates with Simulink (speed control response has disturbance with certain period).
-Examining with oscilloscope, frequency of the loop dipped to 5kHz from 10kHz at 115200 baud rate. With 20kHz lopp rate, the pin toggle frequency is now 2.5kHz.
+Examining with oscilloscope, frequency of the loop dipped to 5kHz from 10kHz at 115200 baud rate. With 5kHz lopp rate, the pin toggle frequency is now 2.5kHz.
 
 Once the model is built with external mode interface, it cannot be undone. With the mode disabled, the model will still build as external mode (bug).
 
