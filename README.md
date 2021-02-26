@@ -33,15 +33,16 @@ Once the model is built with external mode interface, it cannot be undone. With 
   
   <h2>STM32:</h2>
   
-  &#10060; TIM3 block for PWM generation does not set the other CCR to zero when dutycycle is set to input. (when CCR1 is set to dutycycle, CCR2 is not set)</br>
-  &#10060; One must generate code using CubeMX first before building and generating code from Simulink</br>
+  &#9989; TIM3 block for PWM generation does not set the other CCR to zero when dutycycle is set to input. (when CCR1 is set to dutycycle, CCR2 is not set)</br>
+  &#9989; One must generate code using CubeMX first before building and generating code from Simulink</br>
   &#10060; when using external mode with receive interrupts in my function, there is a <code>multiple definition of 'HAL_UART_RxCpltCallback'</code> error</br>
   &#10060; setup software interrupt on USART2 RX to trigger</br>
   &#9989; set objects as global to add Watch Expressions during debug</br>
-  &#10060; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</br>
+  &#9989; when the motor is turned manually while debugging and when it slips, encoder shows the correct 200 deg. <- troubleshoot</br>
+    &emsp; &#8627; Instead of using STM32 Mat/Target TIM block to generate PWM, use my own MATLAB system block</br>
   &#9989; set the baudrate to 921600 on STM32CubeMX and MATLAB function reading serialport</br>
     &emsp; &#8627; Along with 921600, oversample is set to 8 instead of 16 but still no difference</br>
-  &#10060; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</br>
+  &#9989; setup ADC with DMA to output current sensing from the amp to the buffer on STM32F4</br>
   &#9989; check if position control of 200 deg works without the UART TX block</br>
     &emsp; &#8627; Did not work. Motor turns to about 30 deg and just sits there</br>
 
@@ -52,7 +53,7 @@ Once the model is built with external mode interface, it cannot be undone. With 
   &#9989; create a new Simulink diagram for Simulink_Motorlab to remove PIL bug</br>
     &emsp; &#8627; Did not work. PIL config window bug persists</br>
   &#9989; change <code>\inc</code> and <code>\src</code> directories in block source m files</br>
-  &#10060; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br>
+  &#9989; for MATLAB system blocks that need variable sample time, such as the sampling freq for data, edit the source m files to use <code>createSampleTime</code> and <code>setNumTicksUnitlNextHit</code>. See <a href="https://www.mathworks.com/help/simulink/ug/single-rate-sample-time-matlab-system-block.html">Here</a></br>
 
   <h2>Simulink:</h2>
   
