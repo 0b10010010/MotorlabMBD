@@ -1,6 +1,9 @@
 # MotorlabMBD
 This readme is for my list of features to complete and to keep track of bugs, workarounds, and etc.
 
+string data corruption -> read up on volatile, heap and stack memory size.
+
+
 PIL simulation running at 1kHz matches better with 10kHz HIL response to 200 deg step input.
 
 The board is setup to write to GPIO to check the loop frequency and it is exactly at 10kHz. -> When sending USART, it rasises the time GPIO pin goes high to total of about 50 microseconds every 20 GPIO high signals which is the sampling rate of 500Hz (loop is running at 100microseconds).
