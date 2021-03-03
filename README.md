@@ -38,6 +38,7 @@ Once the model is built with external mode interface, it cannot be undone. With 
   
   <h2>STM32:</h2>
   
+  &#9989; When using `snprintf(buffer, sizeof(buffer), "t:%0.3f|p:%0.3f|v:%0.4f|a:%0.3f|", data[i].floatVals[0],data[i].floatVals[1],data[i].floatVals[2],data[i].floatVals[3]);`, behavior was undeterminant meaning sometimes the trailing values for `a:%0.3f|` gets ignored and the function writes `t:%0.3f` instead. The fix was to not to use `sizeof`. But after the correct string receive, reverting back to the original code did not reproduce the bug</br>
   &#10060; Implement `AUTOSTART` and `STOP` command function.</br>
   &#9989; Check USART init function for TX size of buffer <- increase the stack size. It fixed the similar problem in camera gps board.</br>
     &emsp; &#8627; Problem solved with blocking transmit for now.</br>
