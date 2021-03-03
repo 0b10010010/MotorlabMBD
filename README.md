@@ -5,9 +5,6 @@ Combine TX and RX block source and header files
 
 explicitily declare all buffer sizes to fit messages.
 
-Also, check USART init function for TX size of buffer <- increase the stack size. It fixed the similar problem in camera gps board.
-
-
 PIL simulation running at 1kHz matches better with 10kHz HIL response to 200 deg step input.
 
 The board is setup to write to GPIO to check the loop frequency and it is exactly at 10kHz. -> When sending USART, it rasises the time GPIO pin goes high to total of about 50 microseconds every 20 GPIO high signals which is the sampling rate of 500Hz (loop is running at 100microseconds).
@@ -40,6 +37,9 @@ Once the model is built with external mode interface, it cannot be undone. With 
   
   <h2>STM32:</h2>
   
+  &#10060; Implement `AUTOSTART` and `STOP` command function.</br>
+  &#9989; Check USART init function for TX size of buffer <- increase the stack size. It fixed the similar problem in camera gps board.</br>
+    &emsp; &#8627; Problem solved with blocking transmit for now.</br>
   &#9989; TIM3 block for PWM generation does not set the other CCR to zero when dutycycle is set to input. (when CCR1 is set to dutycycle, CCR2 is not set)</br>
   &#9989; One must generate code using CubeMX first before building and generating code from Simulink</br>
   &#10060; when using external mode with receive interrupts in my function, there is a <code>multiple definition of 'HAL_UART_RxCpltCallback'</code> error</br>
