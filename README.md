@@ -1,9 +1,10 @@
 # MotorlabMBD
 This readme is for my list of features to complete and to keep track of bugs, workarounds, and etc.
 
-Combine TX and RX block source and header files
 
-explicitily declare all buffer sizes to fit messages.
+explicitily declare all buffer sizes to fit messages. -> use `uint8_t n = snprintf(buffer, sizeof(buffer), "%.f", float);` to get the size
+
+Combine TX and RX block source and header files
 
 PIL simulation running at 1kHz matches better with 10kHz HIL response to 200 deg step input.
 
