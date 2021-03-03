@@ -1,9 +1,11 @@
 # MotorlabMBD
 This readme is for my list of features to complete and to keep track of bugs, workarounds, and etc.
 
+Combine TX and RX block source and header files
+
 explicitily declare all buffer sizes to fit messages.
 
-string data corruption -> read up on volatile, heap and stack memory size. Declare struct as volatile. Also, check USART init function for TX size of buffer <- increase the stack size. It fixed the similar problem in camera gps board.
+Also, check USART init function for TX size of buffer <- increase the stack size. It fixed the similar problem in camera gps board.
 
 
 PIL simulation running at 1kHz matches better with 10kHz HIL response to 200 deg step input.
